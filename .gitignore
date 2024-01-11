@@ -1,0 +1,46 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/.vs
+# Prerequisites
+*.d
+
+# Compiled Object files
+*.slo
+*.lo
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Compiled Dynamic libraries
+*.so
+*.dylib
+*.dll
+
+# Fortran module files
+*.mod
+*.smod
+
+# Compiled Static libraries
+*.lai
+*.la
+*.a
+*.lib
+
+# Executables
+*.exe
+*.out
+*.app
+/promgmt-app/.vscode
+
+/CleanArchitecture/src/Apps/CleanArchitecture.Api/wwwroot/uploads/**
+/promgmt-app/src/app/components/user/create-user/dist
+/promgmt-app/src/app/components/user/user-page/dist
+/promgmt-app/src/app/components/user/user-profile/dist
+/promgmt-app/src/app/shared/components/master-component/dist
+/bin/Debug/net6.0
+/obj
