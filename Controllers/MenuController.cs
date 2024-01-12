@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using DessertboxAPI.Dto;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using SnackboxAPI.Models;
 
@@ -59,5 +60,18 @@ namespace SnackboxAPI.Controllers
                 return null;
             }
         }
-    }
-}
+
+		/// <summary>
+		/// 
+		/// </summary>
+		/// <returns></returns>
+		[HttpGet("GetAllCategory")]
+		public async Task<ActionResult<List<CategoryDto>>> GetAllCategory()
+		{
+			var getAdvance = await _context.QueryResult.FromSqlRaw("Execute dbo.SP_GetmenuItems_new").ToListAsync();
+			List <CategoryDto> GetAdvance = Newtonsoft.Json.JsonConvert.DeserializeObject<List<CategoryDto>>(getAdvance[0].JsonResult);
+
+			return Ok(GetAdvance);
+		}
+	}
+} 

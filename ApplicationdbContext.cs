@@ -19,6 +19,7 @@ namespace SnackboxAPI
         public DbSet<Addon> Addons { get; set; }
         public DbSet<Drink> Drinks { get; set; }
 		public DbSet<User> Users { get; set; }
+		public DbSet<QueryResult> QueryResult { get; set; }
 
 		protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
@@ -31,8 +32,9 @@ namespace SnackboxAPI
             modelBuilder.Entity<Menu>().HasKey(m => m.id);
 
             modelBuilder.Entity<MenuResult>().HasNoKey().ToView(null);
+            modelBuilder.Entity<QueryResult>().HasNoKey().ToView(null);
 
-            modelBuilder.Entity<Snack>().HasKey(m => m.Id);
+			modelBuilder.Entity<Snack>().HasKey(m => m.Id);
 
             modelBuilder.Entity<Dessert>().HasKey(m => m.Id);
             modelBuilder.Entity<Addon>().HasKey(m => m.Id);
